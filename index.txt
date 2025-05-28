@@ -380,7 +380,7 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMCIgeT0iNTAiIGZpbGw9IiMwMGZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiPkJST1NFS0FJPC90ZXh0Pgo8L3N2Zz4=" alt="Brosekai Logo" class="nav-logo">
+            <img src="Brosekai.logo.png" alt="Brosekai Logo" class="nav-logo">
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="https://www.youtube.com/@Brosekai" class="nav-link" target="_blank">Videos</a></li>
