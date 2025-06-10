@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BROSEKAI - Gaming Content Creator</title>
+    <title>BROSEKAI - Anime Updates and Reviews</title>
     <style>
         * {
             margin: 0;
@@ -130,6 +130,7 @@
             width: 100%;
             height: auto;
             margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 40px #ff3366);
         }
 
         .title {
@@ -142,6 +143,7 @@
                 0 0 30px #ff3366;
             margin-bottom: 20px;
             letter-spacing: 3px;
+            display: none; /* Hide text title since we're using logo */
         }
 
         .subtitle {
@@ -213,14 +215,14 @@
             color: white;
         }
 
-        .coming-soon {
+        .merch-btn {
             background: linear-gradient(45deg, #ff3366, #cc1144);
             color: white;
             border-color: #ff3366;
             box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
         }
 
-        .coming-soon:hover {
+        .merch-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 30px rgba(255, 51, 102, 0.7);
         }
@@ -329,6 +331,10 @@
             .nav-logo {
                 height: 35px;
             }
+
+            .logo {
+                max-width: 300px;
+            }
         }
 
         /* Glitch effect for title */
@@ -384,7 +390,7 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="https://www.youtube.com/@Brosekai" class="nav-link" target="_blank">Videos</a></li>
-                <li><a href="#merch" class="nav-link">Merch</a></li>
+                <li><a href="https://brosekai.printful.me/" class="nav-link" target="_blank">Merch</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -395,19 +401,19 @@
     
     <div class="container">
         <div class="logo-section">
-            <h1 class="title glitch" data-text="BROSEKAI">BROSEKAI</h1>
-            <p class="subtitle">Gaming Content Creator • Streamer • Epic Moments</p>
+            <img src="Brosekai.logo.png" alt="Brosekai Logo" class="logo">
+            <p class="subtitle">Anime Updates and Reviews • YouTube • Epic Moments</p>
         </div>
 
         <div class="cta-section">
             <a href="https://www.youtube.com/@Brosekai" class="cta-button youtube-btn" target="_blank">
-                🎮 Watch on YouTube
+                🎮 Watch and Subscribe on YouTube
             </a>
-            <a href="https://www.youtube.com/@Brosekai?sub_confirmation=1" class="cta-button subscribe-btn" target="_blank">
-                ⚡ Subscribe Now
+            <a href="https://www.patreon.com/Brosekai" class="cta-button subscribe-btn" target="_blank">
+                ⚡ Subscribe to Patreon Now
             </a>
-            <a href="#" class="cta-button coming-soon">
-                🛍️ Merch Coming Soon
+            <a href="https://brosekai.printful.me/" class="cta-button merch-btn" target="_blank">
+                🛍️ Shop Brosekai Merch
             </a>
         </div>
 
@@ -415,10 +421,10 @@
             <a href="https://www.youtube.com/@Brosekai" class="social-link" target="_blank">
                 📺
             </a>
-            <a href="#" class="social-link">
+            <a href="instagram.com/BrosekaiYT" class="social-link">
                 🎮
             </a>
-            <a href="#" class="social-link">
+            <a href="reddit.com/r/Brosekai" class="social-link">
                 💬
             </a>
         </div>
@@ -426,7 +432,7 @@
         <div class="footer">
             <div class="footer-content">
                 <p>© 2025 Brosekai. All rights reserved.</p>
-                <p>Gaming Content • Streaming • Epic Moments</p>
+                <p>Anime Content Creator • YouTube • Epic Moments</p>
             </div>
         </div>
     </div>
