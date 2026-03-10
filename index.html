@@ -116,7 +116,7 @@
 
         .logo-section {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             animation: glow-pulse 3s ease-in-out infinite;
         }
 
@@ -133,37 +133,87 @@
             filter: drop-shadow(0 0 20px #ff8c42) drop-shadow(0 0 40px #ff6b35);
         }
 
-        .title {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #ff8c42;
-            text-shadow: 
-                0 0 10px #ff8c42,
-                0 0 20px #ff8c42,
-                0 0 30px #ff8c42;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-            display: none;
-        }
-
         .subtitle {
             font-size: 1.5rem;
             color: #ffb347;
             text-shadow: 0 0 10px #ff8c42;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
-        .cta-section {
+        /* ── Facebook Pages Section ── */
+        .fb-section-label {
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 179, 71, 0.7);
+            margin-bottom: 18px;
+            margin-top: 10px;
+        }
+
+        .fb-pages {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+        }
+
+        .fb-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 26px;
+            border-radius: 14px;
+            background: rgba(24, 119, 242, 0.12);
+            border: 2px solid rgba(24, 119, 242, 0.5);
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.2);
+            min-width: 220px;
+        }
+
+        .fb-card:hover {
+            background: rgba(24, 119, 242, 0.28);
+            border-color: #1877f2;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(24, 119, 242, 0.45);
+        }
+
+        .fb-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .fb-info {
+            text-align: left;
+        }
+
+        .fb-page-name {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+
+        .fb-follow-text {
+            font-size: 0.8rem;
+            color: #7bb8ff;
+            margin-top: 2px;
+        }
+
+        /* ── Other CTAs ── */
+        .cta-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
         }
 
         .cta-button {
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 13px 26px;
+            font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
@@ -226,11 +276,12 @@
             box-shadow: 0 5px 30px rgba(255, 179, 71, 0.7);
         }
 
+        /* ── Small social row ── */
         .social-section {
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .social-link {
@@ -284,6 +335,7 @@
             text-align: center;
             color: rgba(255, 140, 66, 0.7);
             font-size: 0.9rem;
+            width: 100%;
         }
 
         .footer-content {
@@ -297,19 +349,24 @@
         }
 
         @media (max-width: 768px) {
-            .title {
-                font-size: 2.5rem;
-            }
-            
             .subtitle {
                 font-size: 1.2rem;
             }
-            
+
+            .fb-pages {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .fb-card {
+                width: 280px;
+            }
+
             .cta-section {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .cta-button {
                 width: 250px;
                 text-align: center;
@@ -335,50 +392,6 @@
                 max-width: 300px;
             }
         }
-
-        .glitch {
-            position: relative;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .glitch::before {
-            animation: glitch-1 2s infinite;
-            color: #ff8c42;
-            z-index: -1;
-        }
-
-        .glitch::after {
-            animation: glitch-2 2s infinite;
-            color: #ffb347;
-            z-index: -2;
-        }
-
-        @keyframes glitch-1 {
-            0%, 14%, 15%, 49%, 50%, 99%, 100% {
-                transform: translate(0);
-            }
-            15%, 49% {
-                transform: translate(-2px, 1px);
-            }
-        }
-
-        @keyframes glitch-2 {
-            0%, 20%, 21%, 62%, 63%, 99%, 100% {
-                transform: translate(0);
-            }
-            21%, 62% {
-                transform: translate(2px, -1px);
-            }
-        }
     </style>
 </head>
 <body>
@@ -396,19 +409,46 @@
 
     <div class="stars" id="stars"></div>
     <div class="particles" id="particles"></div>
-    
+
     <div class="container">
         <div class="logo-section">
             <img src="BrosekaiPNG.png" alt="Brosekai Logo" class="logo">
             <p class="subtitle">Anime Updates and Reviews • YouTube • Epic Moments</p>
         </div>
 
+        <!-- Facebook Pages - Featured -->
+        <p class="fb-section-label">📘 Follow us on Facebook</p>
+        <div class="fb-pages">
+            <a href="https://www.facebook.com/profile.php?id=61583673964423" class="fb-card" target="_blank">
+                <span class="fb-icon">⚔️</span>
+                <div class="fb-info">
+                    <div class="fb-page-name">Brosekai</div>
+                    <div class="fb-follow-text">Follow on Facebook →</div>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61583745277503" class="fb-card" target="_blank">
+                <span class="fb-icon">🏯</span>
+                <div class="fb-info">
+                    <div class="fb-page-name">Anime Shogun</div>
+                    <div class="fb-follow-text">Follow on Facebook →</div>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61586884830145" class="fb-card" target="_blank">
+                <span class="fb-icon">🌊</span>
+                <div class="fb-info">
+                    <div class="fb-page-name">Grand Line Gazette</div>
+                    <div class="fb-follow-text">Follow on Facebook →</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Secondary CTAs -->
         <div class="cta-section">
             <a href="https://www.youtube.com/@Brosekai" class="cta-button youtube-btn" target="_blank">
                 🎮 New Videos on YouTube
             </a>
             <a href="https://www.patreon.com/Brosekai" class="cta-button subscribe-btn" target="_blank">
-                ⚡ Subscribe to Patreon Now
+                ⚡ Subscribe to Patreon
             </a>
             <a href="https://brosekai.printful.me/" class="cta-button merch-btn" target="_blank">
                 🛍️ Shop Brosekai Merch
@@ -416,15 +456,9 @@
         </div>
 
         <div class="social-section">
-            <a href="https://www.youtube.com/@Brosekai" class="social-link" target="_blank">
-                📺
-            </a>
-            <a href="instagram.com/BrosekaiYT" class="social-link">
-                🎮
-            </a>
-            <a href="reddit.com/r/Brosekai" class="social-link">
-                💬
-            </a>
+            <a href="https://www.youtube.com/@Brosekai" class="social-link" target="_blank" title="YouTube">📺</a>
+            <a href="https://instagram.com/BrosekaiYT" class="social-link" target="_blank" title="Instagram">🎮</a>
+            <a href="https://reddit.com/r/Brosekai" class="social-link" target="_blank" title="Reddit">💬</a>
         </div>
 
         <div class="footer">
@@ -436,12 +470,9 @@
     </div>
 
     <script>
-        // Create animated stars
         function createStars() {
             const starsContainer = document.getElementById('stars');
-            const numStars = 100;
-
-            for (let i = 0; i < numStars; i++) {
+            for (let i = 0; i < 100; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.left = Math.random() * 100 + '%';
@@ -451,72 +482,41 @@
             }
         }
 
-        // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
-            
             setInterval(() => {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
                 particlesContainer.appendChild(particle);
-
                 setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
-                    }
+                    if (particle.parentNode) particle.parentNode.removeChild(particle);
                 }, 6000);
             }, 500);
         }
 
-        // Add hover effects to buttons
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('mouseenter', () => {
                 button.style.transform = 'translateY(-3px) scale(1.05)';
             });
-            
             button.addEventListener('mouseleave', () => {
                 button.style.transform = 'translateY(0) scale(1)';
             });
         });
 
-        // Initialize effects
         createStars();
         createParticles();
 
-        // Add cursor trail effect
         document.addEventListener('mousemove', (e) => {
             const cursor = document.createElement('div');
-            cursor.style.position = 'fixed';
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursor.style.width = '4px';
-            cursor.style.height = '4px';
-            cursor.style.background = '#ff8c42';
-            cursor.style.borderRadius = '50%';
-            cursor.style.pointerEvents = 'none';
-            cursor.style.opacity = '0.7';
-            cursor.style.zIndex = '1000';
-            cursor.style.animation = 'fade-out 1s ease-out forwards';
-            
+            cursor.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:4px;height:4px;background:#ff8c42;border-radius:50%;pointer-events:none;opacity:0.7;z-index:1000;animation:fade-out 1s ease-out forwards;`;
             document.body.appendChild(cursor);
-            
-            setTimeout(() => {
-                if (cursor.parentNode) {
-                    cursor.parentNode.removeChild(cursor);
-                }
-            }, 1000);
+            setTimeout(() => { if (cursor.parentNode) cursor.parentNode.removeChild(cursor); }, 1000);
         });
 
-        // Add CSS for cursor trail
         const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fade-out {
-                0% { opacity: 0.7; transform: scale(1); }
-                100% { opacity: 0; transform: scale(0); }
-            }
-        `;
+        style.textContent = `@keyframes fade-out { 0% { opacity:0.7; transform:scale(1); } 100% { opacity:0; transform:scale(0); } }`;
         document.head.appendChild(style);
     </script>
 </body>
